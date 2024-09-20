@@ -1,12 +1,12 @@
 package com.lyttldev.lyttletokens;
 
 import com.lyttldev.lyttletokens.commands.*;
-import com.lyttldev.lyttletokens.database.SQLite;
-import com.lyttldev.lyttletokens.handlers.PlayerJoinListener;
 import com.lyttldev.lyttletokens.types.Configs;
 import com.lyttldev.lyttletokens.utils.Console;
 import com.lyttldev.lyttletokens.utils.Message;
+import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
+import net.milkbowl.vault.economy.Economy;
 
 import java.io.File;
 
@@ -34,9 +34,6 @@ public final class LyttleTokens extends JavaPlugin {
 
         // Commands
         new LyttleTokensCommand(this);
-
-        // Listeners
-        new PlayerJoinListener(this);
     }
 
     @Override

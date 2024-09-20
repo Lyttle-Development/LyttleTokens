@@ -20,14 +20,18 @@ repositories {
     }
 
     maven {
+        url = uri("https://jitpack.io")
+    }
+
+    maven {
         url = uri("https://repo.maven.apache.org/maven2/")
     }
 }
 
 dependencies {
-    api(libs.org.xerial.sqlite.jdbc)
     compileOnly(libs.io.papermc.paper.paper.api)
     compileOnly(libs.net.luckperms.api)
+    compileOnly(libs.com.github.milkbowl.vaultapi)
 }
 
 group = "com.lyttldev"

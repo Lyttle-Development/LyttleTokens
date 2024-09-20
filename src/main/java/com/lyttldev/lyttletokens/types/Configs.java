@@ -10,6 +10,7 @@ public class Configs {
     public Config messages;
 
     // Default configs
+    public Config defaultGeneral;
     public Config defaultMessages;
 
 
@@ -22,6 +23,7 @@ public class Configs {
 
         // Default configs
         defaultMessages = new Config(plugin, "#defaults/messages.yml");
+        defaultGeneral = new Config(plugin, "#defaults/config.yml");
     }
 
     public void reload() {

@@ -98,11 +98,8 @@ public class Message {
         return MiniMessage.miniMessage().deserialize(message);
     }
 
-    public static Component getMessage(String message) {
-        return _getMessage(_getConfigMessage(message));
-    }
-
     public static Component getMessage(String message, String[][] replacements) {
         return _getMessage(_replaceMessageStrings(_getConfigMessage(message), replacements));
     }
+
 }
