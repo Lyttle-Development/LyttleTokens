@@ -1,0 +1,15 @@
+name: LyttleTokens
+version: '${projectVersion}'
+main: com.lyttldev.lyttletokens.LyttleTokens
+api-version: '1.20'
+depend: [LuckPerms]
+commands:
+  staff:
+    usage: /staff
+    description: LyttleTokens command
+    permission: lyttletokens.staff
+
+  lyttletokens:
+    usage: /lyttletokens [reload]
+    description: Shows plugin version and reload config files
+    permission: lyttletokens.staff
