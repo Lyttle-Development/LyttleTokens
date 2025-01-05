@@ -1,1 +1,7 @@
-scoreboard_name: 'afk-time'
+# AFK Settings
+afk_scoreboard_name: 'afk-time'
+afk_time: 300
+
+# Tokens Settings
+tokens_time: 111
+tokens_amount: 1

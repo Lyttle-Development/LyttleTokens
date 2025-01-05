@@ -1,6 +1,7 @@
 package com.lyttldev.lyttletokens;
 
 import com.lyttldev.lyttletokens.commands.*;
+import com.lyttldev.lyttletokens.modules.TokensGiver;
 import com.lyttldev.lyttletokens.types.Configs;
 import com.lyttldev.lyttletokens.utils.Console;
 import com.lyttldev.lyttletokens.utils.Message;
@@ -34,6 +35,9 @@ public final class LyttleTokens extends JavaPlugin {
 
         // Commands
         new LyttleTokensCommand(this);
+
+        // Modules
+        TokensGiver.init(this, economy);
     }
 
     @Override
