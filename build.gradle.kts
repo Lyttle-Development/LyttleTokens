@@ -37,7 +37,7 @@ dependencies {
 group = "com.lyttldev"
 version = (property("pluginVersion") as String)
 description = "LyttleTokens"
-java.sourceCompatibility = JavaVersion.VERSION_17
+java.sourceCompatibility = JavaVersion.VERSION_21
 
 publishing {
     publications.create<MavenPublication>("maven") {
