@@ -1,0 +1,19 @@
+name: LyttleTokens
+version: ${version}
+main: com.lyttldev.lyttletokens.LyttleTokens
+api-version: '1.21'
+authors:
+  - LyttleDevelopment
+  - ThatsATim
+  - Stualyttle
+
+dependencies:
+  server:
+    Vault:
+      load: BEFORE
+      required: true
+      join-classpath: true
+    LyttleScoreboardEconomy:
+      load: BEFORE
+      required: true
+      join-classpath: true

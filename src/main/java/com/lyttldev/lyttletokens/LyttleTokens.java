@@ -5,6 +5,10 @@ import com.lyttldev.lyttletokens.modules.TokensGiver;
 import com.lyttldev.lyttletokens.types.Configs;
 import com.lyttldev.lyttletokens.utils.Console;
 import com.lyttldev.lyttletokens.utils.Message;
+import io.papermc.paper.command.brigadier.Commands;
+import io.papermc.paper.plugin.lifecycle.event.LifecycleEventManager;
+import io.papermc.paper.plugin.lifecycle.event.types.LifecycleEvents;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 import net.milkbowl.vault.economy.Economy;
@@ -33,11 +37,18 @@ public final class LyttleTokens extends JavaPlugin {
         Console.init(this);
         Message.init(this);
 
-        // Commands
-        new LyttleTokensCommand(this);
+        // Register commands
+        LifecycleEventManager<Plugin> manager = this.getLifecycleManager();
+        manager.registerEventHandler(LifecycleEvents.COMMANDS, event -> {
+            final Commands commands = event.registrar();
+            this.registerCommands(commands);
+        });
 
         // Modules
-        TokensGiver.init(this, economy);
+        TokensGiver.init(this, economy);    }
+
+    public void registerCommands(Commands commands) {
+        LyttleTokensCommand.createCommand(this, commands);
     }
 
     @Override
